@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
   
+  resources :patients
   root 'pages#home'
   get 'about', to: 'pages#about'
+  
+  #get 'patients', to: 'patietns#index'
   
   get 'welcome/about', to: 'welcome#about'
   get 'welcome/home', to: 'welcome#home'

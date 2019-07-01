@@ -1,0 +1,92 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fin %>
+    <%= form.number_field :fin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room %>
+    <%= form.number_field :room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allergy %>
+    <%= form.text_field :allergy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :abw %>
+    <%= form.number_field :abw %>
+  </div>
+
+  <div class="field">
+    <%= form.label :crcl %>
+    <%= form.number_field :crcl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :presciber %>
+    <%= form.text_field :presciber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rphname %>
+    <%= form.text_field :rphname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eddosegiven %>
+    <%= form.datetime_select :eddosegiven %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orderdate %>
+    <%= form.datetime_select :orderdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vancodose %>
+    <%= form.number_field :vancodose %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appropriate %>
+    <%= form.check_box :appropriate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :newvanco %>
+    <%= form.number_field :newvanco %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

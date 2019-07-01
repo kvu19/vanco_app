@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fin</th>
+      <th>Name</th>
+      <th>Room</th>
+      <th>Allergy</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Abw</th>
+      <th>Crcl</th>
+      <th>Presciber</th>
+      <th>Rphname</th>
+      <th>Eddosegiven</th>
+      <th>Orderdate</th>
+      <th>Vancodose</th>
+      <th>Appropriate</th>
+      <th>Newvanco</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.fin %></td>
+        <td><%= patient.name %></td>
+        <td><%= patient.room %></td>
+        <td><%= patient.allergy %></td>
+        <td><%= patient.age %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.abw %></td>
+        <td><%= patient.crcl %></td>
+        <td><%= patient.presciber %></td>
+        <td><%= patient.rphname %></td>
+        <td><%= patient.eddosegiven %></td>
+        <td><%= patient.orderdate %></td>
+        <td><%= patient.vancodose %></td>
+        <td><%= patient.appropriate %></td>
+        <td><%= patient.newvanco %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>
